@@ -1,0 +1,16 @@
+//include ../-helpers/variables
+//include ../-helpers/mixins
+
+doctype html
+html(lang="ru")
+	include -templates-includes/head--inc
+	body
+		//-Header
+		include -templates-includes/header--inc
+
+		//-Content
+		.content
+			block content
+
+		//-Footer
+		include -templates-includes/footer--inc
