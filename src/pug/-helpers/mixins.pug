@@ -1,3 +1,44 @@
 //-Repeat
-- for (var i = 1; i <= limit; i++)
-	block
+	- for (var i = 1; i <= limit; i++)
+		block
+
+//-Header nav
+mixin nav-item($href, $text, $lnk_class)
+	li.nav-item
+		a(href= $href class= $lnk_class)= $text
+
+//-Card
+mixin card($counter, $subtitle, $src, $alt, $cur, $price)
+	.card
+		.card-body
+			h3.card-title Live |
+				span.card-title__counter= $counter
+			h4.card-subtitle= $subtitle
+			img(src= $src alt= $alt).card-img-bottom
+			.asset-val
+				.asset-val__currency= $cur
+				.asset-val__price= $price
+			button.btn.btn-primary Deposit account
+
+//-Select
+mixin form-select($id, $label, $option1, $option2)
+	label(for= $id)= $label
+	select(id= $id).form-control
+		option(value="1")= $option1
+		option(value="2")= $option2
+
+//-Platform
+mixin platform-item($name)
+	li.platform__item
+		.platform__item-name= $name
+
+//-Wallet
+mixin wallet($name, $sum)
+	.wallet__item-name= $name
+		.wallet__item-sum= $sum
+		button.wallet__item-btn
+
+//-Footer contacts
+mixin footer-contacts($href, $text)
+	li.footer__nav-item
+		a.footer__lnk(href= $href)= $text

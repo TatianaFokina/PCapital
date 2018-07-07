@@ -1,17 +1,17 @@
 header.navbar
+	.container-fluid
 		.navbar-logo
 		nav
-			ul.nav
-				li.nav-item
-					a(href="#").nav-link.active Dashboard
-				li.nav-item
-					a(href="#").nav-link Deposit
-				li.nav-item
-					a(href="#").nav-link Transfer
-				li.nav-item
-					a(href="#").nav-link Exchange
-				li.nav-item
-					a(href="#").nav-link Withdraw
-			ul
+			ul.navbar-nav
+				+nav-item("#", "Dashboard", "nav-link active")
+				+nav-item("#", "Deposit", "nav-link")
+				+nav-item("#", "Transfer", "nav-link")
+				+nav-item("#", "Exchange", "nav-link")
+				+nav-item("#", "Withdraw", "nav-link")
+			ul.nav-icons
 				li
-
+					a(href="#" title="Account").nav-ico.nav-ico--account
+				li
+					a(href="#" title="Log out").nav-ico.nav-ico--out
+				li
+					a(href="#" title="Language").nav-ico.nav-ico--lang

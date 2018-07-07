@@ -2,3 +2,57 @@ extends -templates/index--tpl
 
 
 block content
+	.row
+		main.col
+			h2 Favorite accounts
+			.row
+				//-Card
+				.col
+					+card("42218769", "Transcontinental express", $src, "Graph transcontinental express", "RUB", "6 532 11,20")
+				//-Card
+				.col
+					+card("42218333", "MT5", $src, "Graph MT5", "USD", "342 628,11")
+				//-Card with forms
+				.col
+					.card
+						.card-header Open account
+						.card-body
+							form
+								.form-group
+									+form-select("platform", "Platform", "MetaTrader 4", "MetaTrader 5")
+								.form-group
+									label(for="order") Order type
+									input(type="text" id="order").form-control
+								.form-group
+									.form-label Currency
+									.form-control.select
+										.select__cur-abbr
+										.select__cur-name
+								.form-group
+									+form-select("leverage","Leverage", "100", "200")
+							button.btn.btn-secondary Create account
+			//-Platforms
+			h2 Trading platforms
+			//-Tabs
+			.platforms-section
+				ul.nav.nav-tabs
+					li.nav-item
+						a(href="#").nav-link.active Metatrader 4
+					li.nav-item
+						a(href="#").nav-link Metatrader 5
+				//-Platform list
+				ul.platforms
+					+platform-item("Web")
+					+platform-item("Windows")
+					+platform-item("Mac OS")
+					+platform-item("Linux")
+					+platform-item("iOS")
+					+platform-item("Android")
+		//-Wallet
+		aside.col
+			.wallet
+				h4 eWallet
+				.wallet__item
+					+wallet("EUR", "0,00")
+					+wallet("USD", "531,13")
+					+wallet("RUR", "76 503,98")
