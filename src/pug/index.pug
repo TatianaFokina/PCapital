@@ -3,55 +3,66 @@ extends -templates/index--tpl
 
 block content
 	.row
-		main.col
+		main.col-xl-9
 			h2 Favorite accounts
 			.row
 				//-Card
-				.col
-					+card("42218769", "Transcontinental express", $src, "Graph transcontinental express", "RUB", "6 532 11,20")
+				.col-xl-4
+					+card("42218769", "Transcontinental express", "imgs/graph-1.svg", "Graph transcontinental express", "RUB", "6 532 11", ",20")
 				//-Card
-				.col
-					+card("42218333", "MT5", $src, "Graph MT5", "USD", "342 628,11")
+				.col-xl-4
+					+card("42218333", "MT5", "imgs/graph-2.svg", "Graph MT5", "USD", "342 628", ",11")
 				//-Card with forms
-				.col
-					.card
+				.col-xl-4
+					.card.card--open-account
 						.card-header Open account
 						.card-body
 							form
 								.form-group
-									+form-select("platform", "Platform", "MetaTrader 4", "MetaTrader 5")
+									+form-select("Platform", "MetaTrader 4")
 								.form-group
-									label(for="order") Order type
-									input(type="text" id="order").form-control
+									label(for="order").form-label Order type
+									input(type="text" id="order" value="Hedging").form-control
 								.form-group
 									.form-label Currency
-									.form-control.select
-										.select__cur-abbr
-										.select__cur-name
+									.select
+										.select__control.form-control
+											.select__cur-abbr RUR
+											.select__cur-name Russian rouble
+										.select__dropdown
+											.select__dropdown-item Item 2
+											.select__dropdown-item Item 3
+											.select__dropdown-item Item 4
+											.select__dropdown-item Item 5
 								.form-group
 									+form-select("leverage","Leverage", "100", "200")
 							button.btn.btn-secondary Create account
 			//-Platforms
-			h2 Trading platforms
-			//-Tabs
-			.platforms-section
-				ul.nav.nav-tabs
-					li.nav-item
-						a(href="#").nav-link.active Metatrader 4
-					li.nav-item
-						a(href="#").nav-link Metatrader 5
-				//-Platform list
-				ul.platforms
-					+platform-item("Web")
-					+platform-item("Windows")
-					+platform-item("Mac OS")
-					+platform-item("Linux")
-					+platform-item("iOS")
-					+platform-item("Android")
+			.platforms
+				h2 Trading platforms
+				//-Tabs
+				.platforms-section
+					ul.nav.nav-tabs
+						li.nav-item
+							a(href="#").nav-link.active
+								.nav-link-text Metatrader 4
+						li.nav-item
+							a(href="#").nav-link
+								.nav-link-text Metatrader 5
+
+					//-Platform list
+					.platform-wrp
+						ul.platform
+							+platform-item("Web", "--web")
+							+platform-item("Windows", "--win")
+							+platform-item("Mac OS", "--mac")
+							+platform-item("Linux", "--linux")
+							+platform-item("iOS", "--apple")
+							+platform-item("Android", "--android")
 		//-Wallet
-		aside.col
+		aside.col-xl-3
 			.wallet
-				h4 eWallet
+				.card-header-wallet(role="heading" aria-level="4") eWallet
 				.wallet__item
 					+wallet("EUR", "0,00")
 					+wallet("USD", "531,13")

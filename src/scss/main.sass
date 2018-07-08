@@ -1,0 +1,251 @@
+$field-border: solid 1px #e4e4e4
+$card-padding-bottom: 2rem // 28px
+
+// Cards
+.card
+	// Variables
+	$card-padding-x: 1.143rem // 16px
+	height: 420px
+	border: 0
+	border-radius: 0
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05)
+	.card-body
+		display: flex
+		flex-direction: column
+	&-header
+		padding-top: 1.143rem // 16px
+		padding-bottom:  0.857rem // 12px
+		background: inherit
+		font-size: $h3-font-size
+		font-weight: 500
+		border-bottom-color: $custom-line
+	// Card title
+	&-title
+		font-size: $h3-font-size
+		color: $custom-orange
+		font-weight: 500
+		&__counter
+			margin-left: 0.286rem // 4px
+			color: $black
+	&-subtitle
+		color: $custom-link
+	// Card graphs
+	&-img-bottom
+		width: 254px
+		height: 160px
+		//object-fit: contain
+	&-top,
+	&-bottom,
+	&--open-account .card-header,
+	&--open-account .card-body
+		padding-right: $card-padding-x
+		padding-left: $card-padding-x
+	&-top
+		padding-top: 1.857rem // 26px
+		padding-bottom: 2.214rem // 31px
+	&-bottom
+		margin-top: auto
+		padding-bottom: $card-padding-bottom
+
+
+
+// Open account Card
+.card--open-account
+	.card-body
+		padding-top: 1.143rem //16px
+		padding-bottom: $card-padding-bottom
+	.btn
+		margin-top: auto
+
+// Select
+.select
+	$item-padding: 10px 8px
+	// Блок с текущим занчением
+	&__control
+		color: #000
+		padding: $item-padding
+		background: url("../imgs/icons/ico-arrow.svg") no-repeat 98% center $custom-gray
+		border: 1px solid
+		&.js-opened
+			background: #ccc
+	// Выпадающий блок
+	&__dropdown
+		display: none
+
+	// Значение из 2 блоков
+	&__cur-abbr,
+	&__cur-name
+		display: inline-block
+	&__cur-name
+		font-size: 0.9286rem
+		color: #808080
+
+
+
+// Card text
+.asset-val
+	margin-bottom: 2.357rem // 33px
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	&__currency
+		margin-right: 0.571rem
+		font-size: 1.286rem // 18px
+		color: $custom-link
+	&__price
+		font-size: 2.5rem // 35px
+	&__decimal
+		font-size: 1.571rem // 22px
+
+// Cards fields
+.form
+	// Labels
+	&-label
+		font-size: 0.929rem // 13px
+		color: $custom-link
+	// Fields
+	&-control
+		padding: 11px 0 9px 13px
+		height: 38px
+		background: $custom-gray
+		border: $field-border
+		border-radius: 0
+
+// Arrows
+.select
+	background: url("../imgs/icons/ico-arrow.svg") no-repeat 98% center $custom-gray
+	border: $field-border
+	border-radius: 0
+
+// Card Ewallet
+.card-header-wallet
+	font-size: 1.143rem // 16px
+	margin-bottom: 1rem // 14px
+
+.wallet
+	&__item
+		width: 233px
+		height: 47px
+		display: flex
+		flex-direction: row
+		background: $white
+		border: $field-border
+
+
+// Platforms
+.platforms
+	margin-top: 3.357rem // 47px
+	&-section
+		background: $white
+		// Tabs
+		.nav
+			&-tabs
+				padding: 1.286rem 1.857rem 0 1.857rem // 18px 26px 0 26px
+				border-bottom-color: $custom-line
+			&-link
+				font-size: $h3-font-size
+				color: $custom-link
+				background-color: transparent !important
+				border: 0
+				margin-right: 1.786rem // 25px
+				padding: 0
+				&-text
+					padding: 0.571rem 0 // 8px
+				&.active .nav-link-text
+					position: relative
+					color: $black
+					&:after
+						content: ''
+						width: 100%
+						height: 2px
+						left: 0
+						bottom: 0
+						position: absolute
+						background: $orange-gradient
+
+// Platforms items
+.platform
+	+list-unstyled
+	margin-bottom: 0
+	display: flex
+	flex-direction: row
+	align-content: center
+	// Adaptive
+	flex-wrap: wrap
+	@include media-breakpoint-up(lg)
+		flex-wrap: nowrap
+	&-wrp
+		padding: 1.929rem 1.857rem 2.143rem 1.857rem // 27px 26px 30px 26px
+	// List of icons
+	&__item
+		margin-right: 0.857rem // 12px
+		width: 120px
+		height: 41px
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: center
+		background-color: $custom-gray
+		border: solid 1px #e4e4e4
+		// Adaptive
+		margin-bottom: 0.857rem // 12px
+		@include media-breakpoint-up(lg)
+			margin-bottom: 0
+
+		&-name
+			padding-left:  0.7856rem // 11px
+			line-height: 1
+			font-size: 1.071rem // 15px
+			font-weight: 500
+			color: $custom-link
+		// Icons
+		&:before
+			content: ""
+			display: block
+			background-position: 50% 50%
+			background-size: contain
+			background-repeat: no-repeat
+		&--web:before
+			width: 20px
+			height: 19px
+			background-image: url("../imgs/icons/logo-web.svg")
+		&--win:before
+			width: 19px
+			height: 19px
+			background-image: url("../imgs/icons/logo-win.svg")
+		&--mac:before
+			width: 22px
+			height: 20px
+			background-image: url("../imgs/icons/logo-mac.svg")
+		&--linux:before
+			width: 18px
+			height: 22px
+			background-image: url("../imgs/icons/logo-linux.svg")
+		&--apple:before
+			width: 18px
+			height: 22px
+			background-image: url("../imgs/icons/logo-apple.svg")
+		&--android:before
+			width: 19px
+			height: 23px
+			background-image: url("../imgs/icons/logo-android.svg")
+
+
+
+
+// Buttons
+.btn
+	padding: 0
+	height: 41px
+	width: 100%
+	font-size: $font-size-btn
+	font-weight: 500
+	border-radius: 0
+	&-primary
+		background-image: $orange-gradient
+		border: 0
+	&-secondary
+		color: $custom-orange
+		background: $white
+		border: 2px solid $custom-orange

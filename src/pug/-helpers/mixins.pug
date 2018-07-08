@@ -8,28 +8,36 @@ mixin nav-item($href, $text, $lnk_class)
 		a(href= $href class= $lnk_class)= $text
 
 //-Card
-mixin card($counter, $subtitle, $src, $alt, $cur, $price)
+mixin card($counter, $subtitle, $src, $alt, $cur, $price, $price_decimal)
 	.card
 		.card-body
-			h3.card-title Live |
-				span.card-title__counter= $counter
-			h4.card-subtitle= $subtitle
-			img(src= $src alt= $alt).card-img-bottom
-			.asset-val
-				.asset-val__currency= $cur
-				.asset-val__price= $price
-			button.btn.btn-primary Deposit account
+			.card-top
+				.card-title(role="heading" aria-level="3") Live |
+					span.card-title__counter= $counter
+				.card-subtitle(role="heading" aria-level="4")= $subtitle
+			img(src= $src alt= $alt).img-fluid.card-img-bottom
+			.card-bottom
+				.asset-val
+					.asset-val__currency= $cur
+					.asset-val__price= $price
+						span.asset-val__decimal= $price_decimal
+				button.btn.btn-primary Deposit account
 
 //-Select
-mixin form-select($id, $label, $option1, $option2)
-	label(for= $id)= $label
-	select(id= $id).form-control
-		option(value="1")= $option1
-		option(value="2")= $option2
+mixin form-select($label, $option1)
+	label.form-label= $label
+	.select
+		.select__control.form-control= $option1
+		.select__dropdown
+			.select__dropdown-item Item 2
+			.select__dropdown-item Item 3
+			.select__dropdown-item Item 4
+			.select__dropdown-item Item 5
+
 
 //-Platform
-mixin platform-item($name)
-	li.platform__item
+mixin platform-item($name, $class_m)
+	li(class="platform__item" + $class_m).platform__item
 		.platform__item-name= $name
 
 //-Wallet
