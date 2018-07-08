@@ -1,17 +1,18 @@
-header.navbar
+header.navbar.flex-column.flex-md-row.navbar-light
 	.container-fluid
-		.navbar-logo
-		nav
-			ul.navbar-nav
+		a(href="#").navbar-brand
+			img(src="imgs/logo.png" alt="logo")
+		nav.nav.mr-auto
+			ul.navbar-nav.flex-row
 				+nav-item("#", "Dashboard", "nav-link active")
 				+nav-item("#", "Deposit", "nav-link")
 				+nav-item("#", "Transfer", "nav-link")
 				+nav-item("#", "Exchange", "nav-link")
 				+nav-item("#", "Withdraw", "nav-link")
-			ul.nav-icons
-				li
-					a(href="#" title="Account").nav-ico.nav-ico--account
-				li
-					a(href="#" title="Log out").nav-ico.nav-ico--out
-				li
-					a(href="#" title="Language").nav-ico.nav-ico--lang
+		ul.navbar-nav.flex-row.ml-md-auto.d-md-flex
+			li.nav-item
+				a(href="#" title="Account").nav-ico.nav-ico--account
+			li.nav-item
+				a(href="#" title="Log out").nav-ico.nav-ico--out
+			li.nav-item
+				a(href="#" title="Language").nav-ico.nav-ico--lang

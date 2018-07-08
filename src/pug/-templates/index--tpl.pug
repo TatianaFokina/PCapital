@@ -5,12 +5,13 @@ doctype html
 html(lang="en")
 	include -templates-includes/head--inc
 	body
-		//-Header
-		include -templates-includes/header--inc
+		.layout-wrp
+			//-Header
+			include -templates-includes/header--inc
 
-		//-Content
-		.container-fluid
-			block content
+			//-Content
+			.container-fluid.content-wrp
+				block content
 
-		//-Footer
-		include -templates-includes/footer--inc
+			//-Footer
+			include -templates-includes/footer--inc

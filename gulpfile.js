@@ -53,14 +53,14 @@ var gulp = require('gulp'),
 // ========================================================================
 // Компиляция
 // ========================================================================
-// SASS (all.scss → test/)
+// SASS (all.sass → test/)
 gulp.task('__compileSass', function () {
 	var $postcss_plugins = [
 		postcss_inline_svg,
 		mergeRules
 	];
 
-	return gulp.src('src/scss/all.scss')
+	return gulp.src('src/scss/all.sass')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass())
 		.pipe(autoprefixer({
@@ -77,14 +77,14 @@ gulp.task('__compileSass', function () {
 		.pipe(browserSync.reload({stream: true}));
 });
 
-// SASS (all.scss → dist/)
+// SASS (all.sass → dist/)
 gulp.task('__compileSass_dist', function () {
 	var $postcss_plugins = [
 		postcss_inline_svg,
 		mergeRules
 	];
 
-	return gulp.src('src/scss/all.scss')
+	return gulp.src('src/scss/all.sass')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(autoprefixer({
@@ -133,7 +133,7 @@ gulp.task('__compilePug', function () {
 // ========================================================================
 // Следит за папкой "test"
 gulp.task('Watch', ['Build--Test'], function () {
-	gulp.watch('src/scss/**/*.scss', ['__compileSass']);
+	gulp.watch('src/scss/**/*.sass', ['__compileSass']);
 	gulp.watch(['src/**/*.pug','!src/helpers/**/*'], ['__compilePug']);
 });
 
@@ -151,7 +151,7 @@ gulp.task('LiveReload', ['Build--Test'], function () {
 		// Отключаем уведомления
 		notify: false
 	});
-	gulp.watch('src/scss/**/*.scss', ['__compileSass']);
+	gulp.watch('src/scss/**/*.sass', ['__compileSass']);
 	gulp.watch('src/**/*.pug', ['__compilePug']);
 });
 
