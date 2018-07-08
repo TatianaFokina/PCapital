@@ -3,15 +3,17 @@ footer
 		.row
 			.col-md-4.col-lg-3
 				.footer__logo
-				.footer__copyright
-					p The payment service is provided by B2BInPay.<br> All rights reserved by PCapitals ltd
+				.footer__copyright The payment service is provided by B2BInPay.<br> All rights reserved by PCapitals ltd
 			.col-md-4.col-lg-3
 				ul.footer__nav
 					+footer-contacts("#", "Terms of use")
 					+footer-contacts("#", "Trading rules")
 					+footer-contacts("#", "Risk disclosure statement")
 					+footer-contacts("#", "Privacy policy")
-			.col-lg-4
+			.col-lg-4.footer__col3
 				.footer__help
 					span.footer__help-text Need help?
 					a.footer__lnk(href="mailto:support@pcmarketsfx.com") support@pcmarketsfx.com
+
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='js/all.js')

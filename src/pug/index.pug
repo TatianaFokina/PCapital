@@ -7,13 +7,13 @@ block content
 			h2 Favorite accounts
 			.row
 				//-Card
-				.col-xl-4
+				.col-sm-6.col-md-5.col-lg-4.col-xl-4
 					+card("42218769", "Transcontinental express", "imgs/graph-1.svg", "Graph transcontinental express", "RUB", "6 532 11", ",20")
 				//-Card
-				.col-xl-4
+				.col-sm-6.col-md-5.col-lg-4.col-xl-4
 					+card("42218333", "MT5", "imgs/graph-2.svg", "Graph MT5", "USD", "342 628", ",11")
 				//-Card with forms
-				.col-xl-4
+				.col-sm-6.col-md-5.col-lg-4.col-xl-4
 					.card.card--open-account
 						.card-header Open account
 						.card-body
@@ -60,10 +60,12 @@ block content
 							+platform-item("iOS", "--apple")
 							+platform-item("Android", "--android")
 		//-Wallet
-		aside.col-xl-3
+		aside.col-lg-3.col-xl-3
 			.wallet
 				.card-header-wallet(role="heading" aria-level="4") eWallet
 				.wallet__item
 					+wallet("EUR", "0,00")
+				.wallet__item
 					+wallet("USD", "531,13")
+				.wallet__item
 					+wallet("RUR", "76 503,98")

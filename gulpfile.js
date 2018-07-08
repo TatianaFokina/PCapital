@@ -9,6 +9,8 @@ var gulp = require('gulp'),
 	browserSync   = require('browser-sync'),
 	// Для конкатенации файлов
 	concat        = require('gulp-concat'),
+	// Для сжатия JS
+	uglify        = require('gulp-uglify'),
 	// Для минификации CSS
 	cssnano       = require('gulp-cssnano'),
 	// Для переименования файлов
@@ -129,6 +131,25 @@ gulp.task('__compilePug', function () {
 
 
 // ========================================================================
+// Объединение файлов
+// ========================================================================
+// JS
+gulp.task('__mergeJS', function() {
+	return gulp.src('./src/js/scripts.js')
+		.pipe(plumber())
+		// Собираем их в кучу в новом файле
+		.pipe(concat('all.js'))
+		// Сохраняем в папку
+		.pipe(gulp.dest('test/js'))
+		.pipe(browserSync.reload({stream: true}));
+});
+
+
+
+
+
+
+// ========================================================================
 // Watch (следит за измениями файлов и компилирует в папку test)
 // ========================================================================
 // Следит за папкой "test"
@@ -153,6 +174,7 @@ gulp.task('LiveReload', ['Build--Test'], function () {
 	});
 	gulp.watch('src/scss/**/*.sass', ['__compileSass']);
 	gulp.watch('src/**/*.pug', ['__compilePug']);
+	gulp.watch('src/js/**/*.js', ['__mergeJS']);
 });
 
 
@@ -185,7 +207,7 @@ gulp.task('__delTest', function() {
 // ========================================================================
 
 // →  "test"
-gulp.task('Build--Test', ['__compileSass', '__compilePug'], function() {
+gulp.task('Build--Test', ['__compileSass', '__mergeJS', '__compilePug'], function() {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('test/fonts'));
@@ -200,7 +222,7 @@ gulp.task('Build--Test', ['__compileSass', '__compilePug'], function() {
 });
 
 // → "dist"
-gulp.task('Build', ['__delDist', '__compileSass', '__compilePug'], function() {
+gulp.task('Build', ['__delDist', '__compileSass', '__mergeJS', '__compilePug'], function() {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'));
@@ -250,6 +272,18 @@ gulp.task('Build', ['__delDist', '__compileSass', '__compilePug'], function() {
 		.pipe(cssnano())
 		// Сохраняем в папку
 		.pipe(gulp.dest('dist/css'));
+
+	// Сжатие JS
+	gulp.src('test/js/**/*.js')
+		.pipe(plumber())
+		// Сжимаем JS-файл
+		//.pipe(uglify())
+		// Сохраняем в папку
+		.pipe(gulp.dest('dist/js'));
+
+	// Copy .txt
+	gulp.src('src/*.txt')
+		.pipe(gulp.dest("dist"));
 });
 
 

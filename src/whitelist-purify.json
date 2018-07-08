@@ -1,1 +1,11 @@
-[]
+[
+  "*scroll*",
+  "*active*",
+  "*expand-*",
+  "*content*",
+  "*js-*",
+  "*-opened*",
+  "*focus-visible*",
+  "*:after*",
+  "*:before*"
+]

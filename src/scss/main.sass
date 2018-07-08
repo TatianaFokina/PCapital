@@ -9,6 +9,10 @@ $card-padding-bottom: 2rem // 28px
 	border: 0
 	border-radius: 0
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05)
+	// Adaptive
+	margin-bottom: 2rem // 28px
+	@include media-breakpoint-up(xl)
+		margin-bottom: 0
 	.card-body
 		display: flex
 		flex-direction: column
@@ -33,7 +37,6 @@ $card-padding-bottom: 2rem // 28px
 	&-img-bottom
 		width: 254px
 		height: 160px
-		//object-fit: contain
 	&-top,
 	&-bottom,
 	&--open-account .card-header,
@@ -60,19 +63,29 @@ $card-padding-bottom: 2rem // 28px
 // Select
 .select
 	$item-padding: 10px 8px
-	// Блок с текущим занчением
+	position: relative
+	// Block with current value
 	&__control
 		color: #000
 		padding: $item-padding
-		background: url("../imgs/icons/ico-arrow.svg") no-repeat 98% center $custom-gray
+		background: url("../imgs/icons/ico-arrow.svg") no-repeat 98% center $custom-gray !important
 		border: 1px solid
-		&.js-opened
-			background: #ccc
-	// Выпадающий блок
+
+	// Drop dawn
 	&__dropdown
 		display: none
+		width: 100%
+		border: $field-border
+		background: #fff
+		position: absolute
+		z-index: 999
+		box-shadow: -1px 5px 8px hsla(0, 0%, 0%, 0.3)
+		&-item
+			padding: $item-padding
+			&:hover
+				background: lighten(desaturate($blue, 20%), 40%)
 
-	// Значение из 2 блоков
+	// Values from 2 blocks
 	&__cur-abbr,
 	&__cur-name
 		display: inline-block
@@ -94,9 +107,18 @@ $card-padding-bottom: 2rem // 28px
 		font-size: 1.286rem // 18px
 		color: $custom-link
 	&__price
-		font-size: 2.5rem // 35px
-	&__decimal
+		// Adaptive
 		font-size: 1.571rem // 22px
+		@include media-breakpoint-up(md)
+			font-size: 2rem // 28px
+		@include media-breakpoint-up(xl)
+			font-size: 2.5rem // 35px
+	&__decimal
+		// Adaptive
+		font-size: 1.214rem // 17px
+		@include media-breakpoint-up(md)
+			font-size: 1.571rem // 22px
+
 
 // Cards fields
 .form
@@ -112,25 +134,42 @@ $card-padding-bottom: 2rem // 28px
 		border: $field-border
 		border-radius: 0
 
-// Arrows
-.select
-	background: url("../imgs/icons/ico-arrow.svg") no-repeat 98% center $custom-gray
-	border: $field-border
-	border-radius: 0
-
 // Card Ewallet
 .card-header-wallet
 	font-size: 1.143rem // 16px
 	margin-bottom: 1rem // 14px
 
 .wallet
+	// Adaptive
+	margin-top: 3.357rem // 47px
+	@include media-breakpoint-up(xl)
+		margin-top: 0
 	&__item
+		margin-bottom: 0.6429rem // 9px
+		padding: 0.786rem 1rem // 11px 14px
 		width: 233px
 		height: 47px
 		display: flex
 		flex-direction: row
+		align-items: center
 		background: $white
 		border: $field-border
+		&-name
+			color: $custom-link
+		&-sum
+			margin-left: 0.571rem // 8px
+			font-size: 1.214rem // 17px
+			font-weight: 500
+		&-btn
+			margin-left: auto
+			width: 10px
+			height: 10px
+			background-image: url("../imgs/icons/ico-dots.svg")
+			background-color: $white
+			background-position: 50% 50%
+			background-size: contain
+			background-repeat: no-repeat
+			border: 0
 
 
 // Platforms
