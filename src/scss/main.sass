@@ -1,10 +1,18 @@
 $field-border: solid 1px #e4e4e4
 $card-padding-bottom: 2rem // 28px
 
+// Hidden h1
+.h-hidden
+	display: none
+
+
+
+
 // Cards
 .card
 	// Variables
 	$card-padding-x: 1.143rem // 16px
+
 	height: 420px
 	border: 0
 	border-radius: 0
@@ -51,7 +59,6 @@ $card-padding-bottom: 2rem // 28px
 		padding-bottom: $card-padding-bottom
 
 
-
 // Open account Card
 .card--open-account
 	.card-body
@@ -90,6 +97,7 @@ $card-padding-bottom: 2rem // 28px
 	&__cur-name
 		display: inline-block
 	&__cur-name
+		margin-left: 8px
 		font-size: 0.9286rem
 		color: #808080
 
@@ -120,12 +128,14 @@ $card-padding-bottom: 2rem // 28px
 			font-size: 1.571rem // 22px
 
 
+
 // Cards fields
 .form
 	// Labels
 	&-label
 		font-size: 0.929rem // 13px
 		color: $custom-link
+		margin-bottom: $label-margin-bottom
 	// Fields
 	&-control
 		padding: 11px 0 9px 13px
@@ -134,16 +144,19 @@ $card-padding-bottom: 2rem // 28px
 		border: $field-border
 		border-radius: 0
 
+
+
 // Card Ewallet
 .card-header-wallet
 	font-size: 1.143rem // 16px
-	margin-bottom: 1rem // 14px
-
+	margin-bottom: 1.214rem
+	line-height: 26px
 .wallet
 	// Adaptive
 	margin-top: 3.357rem // 47px
 	@include media-breakpoint-up(xl)
 		margin-top: 0
+		margin-left: 21px
 	&__item
 		margin-bottom: 0.6429rem // 9px
 		padding: 0.786rem 1rem // 11px 14px
@@ -162,14 +175,15 @@ $card-padding-bottom: 2rem // 28px
 			font-weight: 500
 		&-btn
 			margin-left: auto
-			width: 10px
-			height: 10px
+			width: 26px
+			height: 100%
 			background-image: url("../imgs/icons/ico-dots.svg")
 			background-color: $white
 			background-position: 50% 50%
-			background-size: contain
 			background-repeat: no-repeat
 			border: 0
+
+
 
 
 // Platforms
@@ -240,7 +254,7 @@ $card-padding-bottom: 2rem // 28px
 			color: $custom-link
 		// Icons
 		&:before
-			content: ""
+			content: ''
 			display: block
 			background-position: 50% 50%
 			background-size: contain

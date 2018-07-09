@@ -35,10 +35,20 @@ footer
 	&__lnk
 		color: $custom-link
 
+	// Help
+	&__col-help
+		// Adaptive
+		margin-top: 2.143rem // 30px
+		@include media-breakpoint-up(lg)
+			margin-top: 0
+			display: flex
+	&__col-nav
+		margin-top: 1.429rem // 20px
+		@include media-breakpoint-up(md)
+			margin-top: 0
 
-	&__col3
-		display: flex
+	// Help link
 	&__help
 		margin-top: auto
 	&__help-text
-		margin-right: 1.286rem
+		margin-right: 1.286rem // 18px

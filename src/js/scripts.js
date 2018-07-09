@@ -1,5 +1,3 @@
-
-
 // Select
 $(function(){
 	var	$controll = ".select__control",
@@ -7,17 +5,17 @@ $(function(){
 		$controll__openedClass = "js-opened",
 		$item = ".select__dropdown-item";
 
-	// Клик на селекте
+	// Click to select
 	$($controll).click(function(){
-		$($controll).not(this).next($dropdown).hide(); // Закрывает все дропдауны (кроме этого)
-		$($controll).not(this).removeClass($controll__openedClass); // удаляет все классы открытого селекта (кроме этого)
+		$($controll).not(this).next($dropdown).hide(); // close all drop dawns except current item
+		$($controll).not(this).removeClass($controll__openedClass); // delete all classes of close select except current item
 
 		$(this).toggleClass($controll__openedClass);
 		$(this).next($dropdown).toggle();
 	});
-	// Клик на айтеме (закрывает селект)
+	// Click to item (close select)
 	$($item).click(function(){
-		$(this).closest('.select').children($controll).toggleClass($controll__openedClass); // Убирает класс открытого селекта
-		$(this).closest($dropdown).toggle(); // Закрывает
+		$(this).closest('.select').children($controll).toggleClass($controll__openedClass); // remove class of open select
+		$(this).closest($dropdown).toggle(); // close
 	});
 });

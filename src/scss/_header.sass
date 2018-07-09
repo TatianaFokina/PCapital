@@ -1,22 +1,38 @@
 .navbar
-	height: 80px
 	padding: 0
 	align-items: stretch
 	background: $white
+	flex-wrap: wrap
+	padding-top: 1rem // 14px
+	@include media-breakpoint-up(md)
+		height: 80px
+		padding-top: 0
 	.nav
 		height: 100%
+		// Adaptive
+		margin: 1.5rem 0 1.5rem 1rem // 21px 0 21px 14px
+		@include media-breakpoint-up(sm)
+			margin: 0
 
 	&-brand
 		padding: 0
-		margin-right: 2rem
+		margin-right: 0
+		@include media-breakpoint-up(sm)
+			margin-right: 1rem // 14px
+		@include media-breakpoint-up(md)
+			margin-right: 2rem // 28px
 		img
 			width: 55px
 			height: 50px
 		
 	&-nav
-		font-size: 1.214rem //17px
 		font-weight: 500
 		align-items: stretch
+		font-size: 1rem
+		height: 3rem
+		@include media-breakpoint-up(md)
+			height: unset
+			font-size: 1.214rem //17px
 
 	.nav-item
 		align-items: center
@@ -25,7 +41,9 @@
 		display: flex
 		align-items: center
 		height: 100%
-		padding: 0 2.143rem
+		padding: 0 1vw
+		@include media-breakpoint-up(xl)
+			padding: 0 2.143rem // 0 30px
 
   // Border bottom for active link
 	.nav-link
@@ -33,18 +51,28 @@
 		&.active:after
 			content: ''
 			height: 3px
-			width: 70%
 			background: $orange-gradient
 			position: absolute
 			bottom: 0
 			left: 50%
 			transform: translateX(-50%)
+			// Adaptive
+			width: 100%
+			@include media-breakpoint-up(xl)
+				width: 70%
 
 
-// Icons
+.header-container
+	justify-content: center !important
+	@include media-breakpoint-up(md)
+		justify-content: space-between !important
+
+// Icons, adaptive
 .navbar-icons
 	.nav-item
-		margin-left: 70px
+		margin-left: 1vw
+		@include media-breakpoint-up(xl)
+			margin-left: 60px
 
 .nav-ico
 	display: block
