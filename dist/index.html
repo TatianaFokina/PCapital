@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>PCapital Dasboard</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+	<link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+	<div class="layout-wrp">
+		<header class="navbar flex-column flex-md-row navbar-light">
+			<div class="container-fluid header-container"><a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="logo"></a>
+				<nav class="nav">
+					<ul class="navbar-nav flex-row">
+						<li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Deposit</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Transfer</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Exchange</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Withdraw</a></li>
+					</ul>
+				</nav>
+				<ul class="navbar-nav flex-row ml-md-auto d-md-flex navbar-icons">
+					<li class="nav-item"><a class="nav-ico nav-ico--account" href="#" title="Account"></a></li>
+					<li class="nav-item"><a class="nav-ico nav-ico--out" href="#" title="Log out"></a></li>
+					<li class="nav-item"><a class="nav-ico nav-ico--lang" href="#" title="Language"></a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="container-fluid content-wrp">
+			<h1 class="h-hidden">PCapital service</h1>
+			<div class="row">
+				<main class="col-xl-9">
+					<h2>Favorite accounts</h2>
+					<div class="row">
+						<div class="col-sm-6 col-lg-4 col-xl-4">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-top">
+										<div class="card-title" role="heading" aria-level="3">Live |<span class="card-title__counter">42218769</span></div>
+										<div class="card-subtitle" role="heading" aria-level="4">Transcontinental express</div>
+									</div><img class="img-fluid card-img-bottom" src="imgs/graph-1.svg" alt="Graph transcontinental express" />
+									<div class="card-bottom">
+										<div class="asset-val">
+											<div class="asset-val__currency">RUB</div>
+											<div class="asset-val__price">6 532 11<span class="asset-val__decimal">,20</span></div>
+										</div><button class="btn btn-primary">Deposit account</button></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4 col-xl-4">
+							<div class="card">
+								<div class="card-body">
+									<div class="card-top">
+										<div class="card-title" role="heading" aria-level="3">Live |<span class="card-title__counter">42218333</span></div>
+										<div class="card-subtitle" role="heading" aria-level="4">MT5</div>
+									</div><img class="img-fluid card-img-bottom" src="imgs/graph-2.svg" alt="Graph MT5" />
+									<div class="card-bottom">
+										<div class="asset-val">
+											<div class="asset-val__currency">USD</div>
+											<div class="asset-val__price">342 628<span class="asset-val__decimal">,11</span></div>
+										</div><button class="btn btn-primary">Deposit account</button></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4 col-xl-4">
+							<div class="card card--open-account">
+								<div class="card-header">Open account</div>
+								<div class="card-body">
+									<form>
+										<div class="form-group"><label class="form-label">Platform</label>
+											<div class="select">
+												<div class="select__control form-control">MetaTrader 4</div>
+												<div class="select__dropdown">
+													<div class="select__dropdown-item">Item 2</div>
+													<div class="select__dropdown-item">Item 3</div>
+													<div class="select__dropdown-item">Item 4</div>
+													<div class="select__dropdown-item">Item 5</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group"><label class="form-label" for="order">Order type</label><input class="form-control" type="text" id="order" value="Hedging"></div>
+										<div class="form-group">
+											<div class="form-label">Currency</div>
+											<div class="select">
+												<div class="select__control form-control">
+													<div class="select__cur-abbr">RUR</div>
+													<div class="select__cur-name">Russian rouble</div>
+												</div>
+												<div class="select__dropdown">
+													<div class="select__dropdown-item">Item 2</div>
+													<div class="select__dropdown-item">Item 3</div>
+													<div class="select__dropdown-item">Item 4</div>
+													<div class="select__dropdown-item">Item 5</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-group"><label class="form-label">leverage</label>
+											<div class="select">
+												<div class="select__control form-control">Leverage</div>
+												<div class="select__dropdown">
+													<div class="select__dropdown-item">Item 2</div>
+													<div class="select__dropdown-item">Item 3</div>
+													<div class="select__dropdown-item">Item 4</div>
+													<div class="select__dropdown-item">Item 5</div>
+												</div>
+											</div>
+										</div>
+									</form><button class="btn btn-secondary">Create account</button></div>
+							</div>
+						</div>
+					</div>
+					<div class="platforms">
+						<h2>Trading platforms</h2>
+						<div class="platforms-section">
+							<ul class="nav nav-tabs">
+								<li class="nav-item">
+									<a class="nav-link active" href="#">
+										<div class="nav-link-text">Metatrader 4</div>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<div class="nav-link-text">Metatrader 5</div>
+									</a>
+								</li>
+							</ul>
+							<div class="platform-wrp">
+								<ul class="platform">
+									<li class="platform__item--web platform__item">
+										<div class="platform__item-name">Web</div>
+									</li>
+									<li class="platform__item--win platform__item">
+										<div class="platform__item-name">Windows</div>
+									</li>
+									<li class="platform__item--mac platform__item">
+										<div class="platform__item-name">Mac OS</div>
+									</li>
+									<li class="platform__item--linux platform__item">
+										<div class="platform__item-name">Linux</div>
+									</li>
+									<li class="platform__item--apple platform__item">
+										<div class="platform__item-name">iOS</div>
+									</li>
+									<li class="platform__item--android platform__item">
+										<div class="platform__item-name">Android</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</main>
+				<aside class="col-lg-3 col-xl-3">
+					<div class="wallet">
+						<div class="card-header-wallet" role="heading" aria-level="4">eWallet</div>
+						<div class="wallet__item">
+							<div class="wallet__item-name">EUR</div>
+							<div class="wallet__item-sum">0,00</div><button class="wallet__item-btn"></button></div>
+						<div class="wallet__item">
+							<div class="wallet__item-name">USD</div>
+							<div class="wallet__item-sum">531,13</div><button class="wallet__item-btn"></button></div>
+						<div class="wallet__item">
+							<div class="wallet__item-name">RUR</div>
+							<div class="wallet__item-sum">76 503,98</div><button class="wallet__item-btn"></button></div>
+					</div>
+				</aside>
+			</div>
+		</div>
+		<footer>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-lg-3 footer__col-copyright">
+						<div class="footer__logo"></div>
+						<div class="footer__copyright">The payment service is provided by B2BInPay.<br> All rights reserved by PCapitals ltd</div>
+					</div>
+					<div class="col-md-4 col-lg-3 footer__col-nav">
+						<ul class="footer__nav">
+							<li class="footer__nav-item"><a class="footer__lnk" href="#">Terms of use</a></li>
+							<li class="footer__nav-item"><a class="footer__lnk" href="#">Trading rules</a></li>
+							<li class="footer__nav-item"><a class="footer__lnk" href="#">Risk disclosure statement</a></li>
+							<li class="footer__nav-item"><a class="footer__lnk" href="#">Privacy policy</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 footer__col-help">
+						<div class="footer__help"><span class="footer__help-text">Need help?</span><a class="footer__lnk" href="mailto:support@pcmarketsfx.com">support@pcmarketsfx.com</a></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/all.js"></script>
+	</div>
+</body>
+
+</html>
